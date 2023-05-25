@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
     private SpriteRenderer sprite;
     private Rigidbody2D body;
-    private enum MovementState { idle, running, jumping }
+    private enum MovementState { idle, running, jumping, attack }
 
     private float coordX = 0f;
     public bool isJumping;
@@ -56,6 +56,11 @@ public class PlayerMovement : MonoBehaviour
         if (isJumping)
         {
             state = MovementState.jumping;
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            state = MovementState.attack;
         }
 
         anim.SetInteger("state", (int)state);

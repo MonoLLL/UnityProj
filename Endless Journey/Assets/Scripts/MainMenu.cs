@@ -15,7 +15,7 @@ public class MainMenu : MonoBehaviour
     }
     public void Help()
     {
-        string commandText = @"C:\Users\Acer\Documents\GitHub\UnityProj\Endless Journey\help.chm";
+        string commandText = @"help.chm";
 
 	    var proc = new System.Diagnostics.Process();
  	    proc.StartInfo.FileName = commandText;

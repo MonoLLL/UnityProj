@@ -8,6 +8,10 @@ public class LevelManager : MonoBehaviour
 {
     int lvlUnlock;
     public Button[] buttons;
+    public void LoadLvl()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
     void Start()
     {
         lvlUnlock = PlayerPrefs.GetInt("levels", 1);
@@ -22,6 +26,6 @@ public class LevelManager : MonoBehaviour
     }
     public void Loadlevel(int lvlIndex)
     {
-        SceneManager.LoadScene(lvlIndex);
+        SceneManager.LoadScene(lvlIndex+1);
     }
 }

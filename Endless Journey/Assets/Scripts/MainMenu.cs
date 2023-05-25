@@ -13,4 +13,13 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+    public void Help()
+    {
+        string commandText = @"C:\Users\Acer\Documents\GitHub\UnityProj\Endless Journey\help.chm";
+
+	    var proc = new System.Diagnostics.Process();
+ 	    proc.StartInfo.FileName = commandText;
+ 	    proc.StartInfo.UseShellExecute = true;
+ 	    proc.Start ();
+    }
 }

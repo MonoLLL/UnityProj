@@ -42,6 +42,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BG
+    uniqueID: 4090453937
+    locked: 0
+  - name: Mountains
+    uniqueID: 64691423
+    locked: 0
+  - name: Graves
+    uniqueID: 4210442731
+    locked: 0
   - name: Terrain
     uniqueID: 3353318429
     locked: 0

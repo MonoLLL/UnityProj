@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
     private SpriteRenderer sprite;
     private Rigidbody2D body;
+    private enum MovementState { idle, running, jumping }
 
     private float coordX = 0f;
     public bool isJumping;
@@ -27,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
 
         body.velocity = new Vector2(coordX*speed, body.velocity.y);
 
-        if (Input.GetKeyDown(KeyCode.Space) && isJumping == false)
+        if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
             body.AddForce(new Vector2(body.velocity.x, jump));
 
         UpdateAnimation();
@@ -35,20 +36,29 @@ public class PlayerMovement : MonoBehaviour
 
     private void UpdateAnimation()
     {
+        MovementState state;
+
         if (coordX > 0f)
         {
-            anim.SetBool("running", true);
+            state = MovementState.running;
             sprite.flipX = false;
         }
         else if (coordX < 0f)
         {
-            anim.SetBool("running", true);
+            state = MovementState.running;
             sprite.flipX = true;
         }
         else
         {
-            anim.SetBool("running", false);
+            state = MovementState.idle;
         }
+
+        if (isJumping)
+        {
+            state = MovementState.jumping;
+        }
+
+        anim.SetInteger("state", (int)state);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CatScript : MonoBehaviour
+public class PatrolScript : MonoBehaviour
 {
     public GameObject leftPoint;
     public GameObject rightPoint;
@@ -20,7 +20,6 @@ public class CatScript : MonoBehaviour
 
     void Update()
     {
-        Vector2 point = currentPoint.position - transform.position;
         if (currentPoint == rightPoint.transform)
         {
             body.velocity = new Vector2(speed, 0);

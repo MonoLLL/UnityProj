@@ -5,11 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class Health: MonoBehaviour
 {
+    [SerializeField] private float startHealth; 
     public float currentHealth { get; private set; }
     private Animator anim;
     private void Awake()
     {
-        currentHealth = 3;
+        currentHealth = startHealth;
         anim = GetComponent<Animator>();
     }
     public void TakeDamage(float damage)

@@ -8,6 +8,7 @@ public class PlayerAttack : MonoBehaviour
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public int damage = 1;
+    [SerializeField] private AudioClip attackSound;
 
     private void Update()
     {
@@ -19,10 +20,11 @@ public class PlayerAttack : MonoBehaviour
     }
     private void Attack()
     {
+        SoundManager.instance.PlaySound(attackSound);
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
         foreach (Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<Health>().TakeDamage(damage);
+            enemy.GetComponent<EnemyHealth>().TakeDamage(damage);
         }
     }
     private void OnDrawGizmosSelected()

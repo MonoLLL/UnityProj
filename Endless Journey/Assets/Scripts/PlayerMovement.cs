@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private float jump;
+    [SerializeField] private AudioClip jumpSound;
     private Animator anim;
     private SpriteRenderer sprite;
     private Rigidbody2D body;
@@ -78,6 +79,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Floor"))
         {
             isJumping = true;
+            SoundManager.instance.PlaySound(jumpSound);
         }
     }
 }

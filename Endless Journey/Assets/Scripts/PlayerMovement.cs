@@ -33,8 +33,8 @@ public class PlayerMovement : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
                 body.AddForce(new Vector2(body.velocity.x, jump));
-            UpdateAnimation();
         }
+        UpdateAnimation();
     }
 
     private void UpdateAnimation()

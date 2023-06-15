@@ -6763,6 +6763,7 @@ MonoBehaviour:
   speed: 10
   jump: 400
   jumpSound: {fileID: 8300000, guid: 55a6fdde9b545b9458d43c7f60398d80, type: 3}
+  canMove: 1
   isJumping: 0
 --- !u!50 &1165291706
 Rigidbody2D:
@@ -12408,8 +12409,8 @@ PlatformEffector2D:
   m_UseOneWay: 0
   m_UseOneWayGrouping: 0
   m_SurfaceArc: 100
-  m_UseSideFriction: 0
-  m_UseSideBounce: 0
+  m_UseSideFriction: 1
+  m_UseSideBounce: 1
   m_SideArc: 1
 --- !u!1 &1345045818
 GameObject:

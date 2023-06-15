@@ -525,7 +525,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 542592255}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.048797, y: 4.117132, z: -10}
+  m_LocalPosition: {x: -2.048797, y: 4.117152, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6885,6 +6885,7 @@ MonoBehaviour:
   attackPoint: {fileID: 1051752623}
   attackRange: 1.41
   damage: 1
+  cooldown: 1
   attackSound: {fileID: 8300000, guid: 14e8163a9c45bf44d914b0a2709b71c1, type: 3}
 --- !u!1 &1170252619
 GameObject:

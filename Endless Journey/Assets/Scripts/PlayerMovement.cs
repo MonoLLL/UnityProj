@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float jump;
     [SerializeField] private AudioClip jumpSound;
+    [SerializeField] public bool canMove = true;
     private Animator anim;
     private SpriteRenderer sprite;
     private Rigidbody2D body;
@@ -24,14 +25,16 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
+        if (canMove)
+        {
+            coordX = Input.GetAxisRaw("Horizontal");
 
-        coordX = Input.GetAxisRaw("Horizontal");
+            body.velocity = new Vector2(coordX * speed, body.velocity.y);
 
-        body.velocity = new Vector2(coordX*speed, body.velocity.y);
-
-        if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
-            body.AddForce(new Vector2(body.velocity.x, jump));
-        UpdateAnimation();
+            if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
+                body.AddForce(new Vector2(body.velocity.x, jump));
+            UpdateAnimation();
+        }
     }
 
     private void UpdateAnimation()

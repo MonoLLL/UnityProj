@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Health: MonoBehaviour
 {
@@ -19,14 +19,13 @@ public class Health: MonoBehaviour
         currentHealth = currentHealth - damage;
         if(currentHealth > 0)
         {
-            SoundManager.instance.PlaySound(hurtSound);
+            SoundManager.instance.PlaySound(hurtSound, SoundManager.currentVolume);
             anim.SetTrigger("hurt");
         }
         else
         {
             anim.SetTrigger("hurt");    //Здесь должна быть анимация смерти
             GetComponent<PlayerMovement>().enabled = false;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);   //Здесь должно быть окно с сообщением
         }
     }
 }

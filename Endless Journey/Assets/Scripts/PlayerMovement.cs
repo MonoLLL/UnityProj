@@ -79,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Floor"))
         {
             isJumping = true;
-            SoundManager.instance.PlaySound(jumpSound);
+            SoundManager.instance.PlaySound(jumpSound, SoundManager.currentVolume);
         }
     }
 }

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Floor
   - Enemy
+  - Handle
+  - Handle2
   layers:
   - Default
   - TransparentFX

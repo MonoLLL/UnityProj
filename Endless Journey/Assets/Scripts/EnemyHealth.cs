@@ -18,7 +18,7 @@ public class EnemyHealth : MonoBehaviour
         currentHealth = currentHealth - damage;
         if (currentHealth <= 0)
         {
-            SoundManager.instance.PlaySound(deathSound);
+            SoundManager.instance.PlaySound(deathSound,  SoundManager.currentVolume);
             anim.SetTrigger("death");    //Здесь должна быть анимация смерти
             //GetComponent<PlayerMovement>().enabled = false;
         }

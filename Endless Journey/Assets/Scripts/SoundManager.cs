@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager instance { get; private set; }
-    public static float currentVolume;
+    public static float currentVolume = 1f;
     private AudioSource source;
 
     private void Awake()

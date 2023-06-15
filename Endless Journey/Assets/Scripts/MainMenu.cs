@@ -7,11 +7,16 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        StartCoroutine(OnButtonClicked());
     }
     public void ExitGame()
     {
         Application.Quit();
+    }
+    public IEnumerator OnButtonClicked()
+    {
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     public void Help()
     {

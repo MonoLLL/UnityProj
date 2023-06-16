@@ -22,7 +22,14 @@ public class EnemyHealth : MonoBehaviour
             SoundManager.instance.PlaySound(deathSound,  SoundManager.currentVolume);
             anim.SetTrigger("death");    //Здесь должна быть анимация смерти
             GetComponent<BoxCollider2D>().enabled = false;
-            GetComponent<PatrolScript>().enabled = false;
+            if (GetComponent<PatrolScript>() != null)
+            {
+                GetComponent<PatrolScript>().enabled = false;
+            }
+            else
+            {
+                GetComponent<VerticalMovement>().enabled = false;
+            }
             GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
             Invoke(nameof(Death), 0.7f);
         }

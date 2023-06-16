@@ -7,6 +7,7 @@ public class Health: MonoBehaviour
 {
     [SerializeField] private float startHealth;
     [SerializeField] private AudioClip hurtSound;
+    public GameObject deathWindow;
     public float currentHealth { get; private set; }
     private Animator anim;
     private void Awake()
@@ -25,6 +26,7 @@ public class Health: MonoBehaviour
         else
         {
             anim.SetTrigger("hurt");    //Здесь должна быть анимация смерти
+            deathWindow.SetActive(true);
             GetComponent<PlayerMovement>().enabled = false;
         }
     }

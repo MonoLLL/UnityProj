@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Buttons : MonoBehaviour
 {
-    public AudioSource source;
     public AudioClip clickSnd;
 
     public void SoundClick()

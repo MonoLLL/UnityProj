@@ -15,7 +15,7 @@ public class PatrolScript : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
-        currentPoint = rightPoint.transform;
+        currentPoint = leftPoint.transform;
     }
 
     void Update()

@@ -9,19 +9,16 @@ public class PlayerAttack : MonoBehaviour
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public int damage = 1;
-    public float cooldown = 0.29f;
-    private float lastAttackedAt = -9999f;
+    public float cooldown = 0.28f;
+    private float canAttack;
     [SerializeField] private AudioClip attackSound;
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !GetComponent<PlayerMovement>().isJumping)
+        if (Input.GetMouseButtonDown(0) && !GetComponent<PlayerMovement>().isJumping && Time.time > canAttack)
         {
-            if (Time.time > lastAttackedAt + cooldown)
-            {
-                Attack();
-                lastAttackedAt = Time.time;
-            }
+            Attack();
+            canAttack = Time.time + cooldown;
         }
     }
     private void Attack()

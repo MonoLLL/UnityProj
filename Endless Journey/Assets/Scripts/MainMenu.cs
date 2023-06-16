@@ -5,23 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public void PlayGame()
+    public void PlayGame(int index)
     {
-        StartCoroutine(OnButtonClicked());
+        StartCoroutine(OnButtonClicked(index));
     }
     public void ExitGame()
     {
         Application.Quit();
     }
-    public IEnumerator OnButtonClicked()
+    public IEnumerator OnButtonClicked(int index)
     {
         yield return new WaitForSeconds(0.5f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(index);
     }
     public void Help()
     {
         string commandText = @"help.chm";
-
 	    var proc = new System.Diagnostics.Process();
  	    proc.StartInfo.FileName = commandText;
  	    proc.StartInfo.UseShellExecute = true;

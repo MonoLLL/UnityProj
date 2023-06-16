@@ -9,6 +9,8 @@ public class Health: MonoBehaviour
     [SerializeField] private float startHealth;
     [SerializeField] private AudioClip hurtSound;
     public GameObject deathWindow;
+    private GameObject player;
+    private GameObject[] enemies;
     public float currentHealth { get; private set; }
     private Animator anim;
     private void Awake()
@@ -28,7 +30,11 @@ public class Health: MonoBehaviour
         {
             anim.SetTrigger("hurt");    //Здесь должна быть анимация смерти
             deathWindow.SetActive(true);
-            GetComponent<PlayerMovement>().enabled = false;
+            player = GameObject.FindGameObjectWithTag("Player");
+            enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            Destroy(player);
+            foreach (GameObject enemy in enemies)
+                Destroy(enemy);
         }
     }
 }

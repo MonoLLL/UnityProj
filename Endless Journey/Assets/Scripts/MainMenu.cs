@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
@@ -12,6 +13,14 @@ public class MainMenu : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+    }
+    public void FindLoadedObjects()
+    {
+        for (int i = 0; i < FindObjectsOfType<DontDestroy>().Length; i++)
+        {
+            if (FindObjectsOfType<DontDestroy>()[i].name == "SettingsCanvas")
+                FindObjectsOfType<DontDestroy>()[i].gameObject.SetActive(true);
+        }
     }
     public IEnumerator OnButtonClicked(int index)
     {

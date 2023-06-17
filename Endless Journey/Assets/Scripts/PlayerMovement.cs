@@ -98,7 +98,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool IsOnGround()
     {
-        RaycastHit2D onGround = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0f, Vector2.down, 0.5f, layer);
+        RaycastHit2D onGround = Physics2D.BoxCast(boxCollider.bounds.min + new Vector3(boxCollider.bounds.extents.x, 0), new Vector2(boxCollider.bounds.size.x - 0.2f, 0.2f), 0f, Vector2.down, 0.2f, layer);
         return onGround.collider != null;
     }
 }

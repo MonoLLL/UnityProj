@@ -19,7 +19,7 @@ public class EnemyDamage : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
-            StopCoroutine(ToDamage());
+            StopAllCoroutines();
     }
     private IEnumerator ToDamage()
     {

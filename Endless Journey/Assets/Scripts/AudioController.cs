@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,13 +14,16 @@ public class AudioController : MonoBehaviour
     public Sprite soundOff;
     private GameObject handle;
     private GameObject handle2;
-    public AudioSource audioSource;
-    public AudioSource audioSource2;
-
+    private AudioSource[] sources; 
+    private AudioSource audioSource;
+    private AudioSource audioSource2;
     public void Awake()
     {
         handle = GameObject.FindGameObjectWithTag("Handle");
         handle2 = GameObject.FindGameObjectWithTag("Handle2");
+        sources = FindObjectsOfType<AudioSource>();
+        audioSource2 = sources[1];
+        audioSource = sources[0];
     }
     public void Update()
     {

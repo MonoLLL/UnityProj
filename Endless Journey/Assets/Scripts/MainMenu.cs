@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
@@ -12,6 +13,20 @@ public class MainMenu : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+    }
+    public void FindLoadedObjects()
+    {
+        DontDestroy settings = FindObjectOfType<DontDestroy>();
+        settings.gameObject.transform.GetChild(1).gameObject.SetActive(true);
+    }
+    public void CloseTabOnMenu()
+    {
+        FindDeactivatedObjects(2, 2);
+    }
+    public void FindDeactivatedObjects(int rootToActive, int childToActive)
+    {
+        GameObject[] objs = SceneManager.GetActiveScene().GetRootGameObjects();
+        objs[rootToActive].transform.GetChild(childToActive).gameObject.SetActive(true);
     }
     public IEnumerator OnButtonClicked(int index)
     {

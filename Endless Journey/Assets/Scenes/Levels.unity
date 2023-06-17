@@ -1623,7 +1623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65b35576665364849bae17abbf3d7576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickSnd: {fileID: 0}
+  clickSnd: {fileID: 8300000, guid: 6c4a2b7f978afb64ea422fb0df89869a, type: 3}
 --- !u!224 &1951960936
 RectTransform:
   m_ObjectHideFlags: 0

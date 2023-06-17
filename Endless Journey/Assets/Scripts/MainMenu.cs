@@ -8,6 +8,8 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame(int index)
     {
+        if (Time.timeScale == 0)
+            Time.timeScale = 1;
         StartCoroutine(OnButtonClicked(index));
     }
     public void ExitGame()

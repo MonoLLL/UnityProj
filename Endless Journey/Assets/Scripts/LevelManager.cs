@@ -12,7 +12,7 @@ public class LevelManager : MonoBehaviour
     public Sprite[] unlockedSprites;
     void Start()
     {
-        lvlUnlock = PlayerPrefs.GetInt("levels", 1);
+        lvlUnlock = PlayerPrefs.GetInt("levels", 2);
         for (int i = 0; i < buttons.Length; i++)
         {
             buttons[i].interactable = false;

@@ -9,9 +9,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jump;
     [SerializeField] private AudioClip jumpSound;
     [SerializeField] public bool canMove;
+    [SerializeField] private LayerMask layer;
     private Animator anim;
     private SpriteRenderer sprite;
     private Rigidbody2D body;
+    private BoxCollider2D boxCollider;
     private enum MovementState { idle, running, jumping, attack }
 
     private float coordX = 0f;
@@ -22,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
+        boxCollider = GetComponent<BoxCollider2D>();
         canMove = true;
     }
     private void Update()
@@ -32,8 +35,13 @@ public class PlayerMovement : MonoBehaviour
 
             body.velocity = new Vector2(coordX * speed, body.velocity.y);
 
+            isJumping = !IsOnGround();
+
             if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
+            {
                 body.AddForce(new Vector2(body.velocity.x, jump));
+                SoundManager.instance.PlaySound(jumpSound, SoundManager.currentVolume);
+            }
         }
 
         UpdateAnimation();
@@ -71,20 +79,26 @@ public class PlayerMovement : MonoBehaviour
         anim.SetInteger("state", (int)state);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Floor"))
-        {
-            isJumping = false;
-        }
-    }
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Floor"))
+    //    {
+    //        isJumping = false;
+    //    }
+    //}
 
-    private void OnCollisionExit2D(Collision2D collision)
+    //private void OnCollisionExit2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Floor"))
+    //    {
+    //        isJumping = true;
+    //        SoundManager.instance.PlaySound(jumpSound, SoundManager.currentVolume);
+    //    }
+    //}
+
+    private bool IsOnGround()
     {
-        if (collision.gameObject.CompareTag("Floor"))
-        {
-            isJumping = true;
-            SoundManager.instance.PlaySound(jumpSound, SoundManager.currentVolume);
-        }
+        RaycastHit2D onGround = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0f, Vector2.down, 0.5f, layer);
+        return onGround.collider != null;
     }
 }

@@ -556,7 +556,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 542592255}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.675262, y: 3.84887, z: -10}
+  m_LocalPosition: {x: -1.6882908, y: 3.8488572, z: -10}
   m_LocalScale: {x: 0.37163767, y: 0.86641693, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -933,7 +933,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 684890286}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.0500007, y: 3.5100005, z: -10}
+  m_LocalPosition: {x: -2.0500004, y: 3.5100005, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5757,7 +5757,7 @@ GameObject:
   - component: {fileID: 972645673}
   - component: {fileID: 972645672}
   - component: {fileID: 972645677}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WalkableObjects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6769,6 +6769,9 @@ MonoBehaviour:
   jump: 400
   jumpSound: {fileID: 8300000, guid: 55a6fdde9b545b9458d43c7f60398d80, type: 3}
   canMove: 1
+  layer:
+    serializedVersion: 2
+    m_Bits: 0
   isJumping: 0
 --- !u!50 &1165291706
 Rigidbody2D:
@@ -7091,7 +7094,7 @@ GameObject:
   - component: {fileID: 1239807007}
   - component: {fileID: 1239807006}
   - component: {fileID: 1239807011}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Terrain
   m_TagString: Floor
   m_Icon: {fileID: 0}

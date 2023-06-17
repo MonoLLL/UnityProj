@@ -8,7 +8,7 @@ TagManager:
   - Enemy
   - Handle
   - Handle2
-  - Platform
+  - Options
   layers:
   - Default
   - TransparentFX
@@ -17,7 +17,7 @@ TagManager:
   - Water
   - UI
   - Enemy
-  - Ground
+  - 
   - 
   - 
   - 

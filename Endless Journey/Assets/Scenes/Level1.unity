@@ -6771,7 +6771,7 @@ MonoBehaviour:
   canMove: 1
   layer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   isJumping: 0
 --- !u!50 &1165291706
 Rigidbody2D:

@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class DontDestroy: MonoBehaviour
 {
+    private DontDestroy[] reloadedObjs;
     public void Start()
     {
-        for (int i = 0; i < FindObjectsOfType<DontDestroy>().Length; i++)
+        reloadedObjs = FindObjectsOfType<DontDestroy>(true);
+        for (int i = 0; i < reloadedObjs.Length; i++)
         {
-            if (FindObjectsOfType<DontDestroy>()[i] != this)
+            if (reloadedObjs[i] != this && reloadedObjs[i].name == gameObject.name)
             {
-                if (FindObjectsOfType<DontDestroy>()[i].name == gameObject.name)
+                if (reloadedObjs[i].CompareTag("Options"))
+                    Destroy(reloadedObjs[i]);
+                else
                     Destroy(gameObject);
             }
         }

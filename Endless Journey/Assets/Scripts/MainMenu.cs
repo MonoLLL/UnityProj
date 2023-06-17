@@ -16,10 +16,10 @@ public class MainMenu : MonoBehaviour
     }
     public void FindLoadedObjects()
     {
-        for (int i = 0; i < FindObjectsOfType<DontDestroy>().Length; i++)
+        for (int i = 0; i < FindObjectsOfType<DontDestroy>(true).Length; i++)
         {
-            if (FindObjectsOfType<DontDestroy>()[i].name == "SettingsCanvas")
-                FindObjectsOfType<DontDestroy>()[i].gameObject.SetActive(true);
+            if (FindObjectsOfType<DontDestroy>(true)[i].name == "SettingsCanvas")
+                FindObjectsOfType<DontDestroy>(true)[i].gameObject.SetActive(true);
         }
     }
     public IEnumerator OnButtonClicked(int index)

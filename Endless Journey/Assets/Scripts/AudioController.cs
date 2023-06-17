@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,7 +16,6 @@ public class AudioController : MonoBehaviour
     private GameObject handle2;
     public AudioSource audioSource;
     public AudioSource audioSource2;
-
     public void Awake()
     {
         handle = GameObject.FindGameObjectWithTag("Handle");

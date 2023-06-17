@@ -1259,13 +1259,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 6
     m_MaxSize: 121
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SETTINGS
+  m_Text: OPTIONS
 --- !u!222 &1347196341
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1795,8 +1795,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52bdaae43d4dd034bac7c09d68d39341, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  source: {fileID: 0}
-  save: {fileID: 0}
 --- !u!4 &1877721738
 Transform:
   m_ObjectHideFlags: 0

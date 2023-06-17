@@ -16,11 +16,17 @@ public class MainMenu : MonoBehaviour
     }
     public void FindLoadedObjects()
     {
-        for (int i = 0; i < FindObjectsOfType<DontDestroy>(true).Length; i++)
-        {
-            if (FindObjectsOfType<DontDestroy>(true)[i].name == "SettingsCanvas")
-                FindObjectsOfType<DontDestroy>(true)[i].gameObject.SetActive(true);
-        }
+        DontDestroy settings = FindObjectOfType<DontDestroy>();
+        settings.gameObject.transform.GetChild(1).gameObject.SetActive(true);
+    }
+    public void CloseTabOnMenu()
+    {
+        FindDeactivatedObjects(2, 2);
+    }
+    public void FindDeactivatedObjects(int rootToActive, int childToActive)
+    {
+        GameObject[] objs = SceneManager.GetActiveScene().GetRootGameObjects();
+        objs[rootToActive].transform.GetChild(childToActive).gameObject.SetActive(true);
     }
     public IEnumerator OnButtonClicked(int index)
     {

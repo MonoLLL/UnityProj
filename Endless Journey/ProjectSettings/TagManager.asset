@@ -10,6 +10,8 @@ TagManager:
   - Handle2
   - Options
   - Platform
+  - Sound
+  - MainMenu
   layers:
   - Default
   - TransparentFX

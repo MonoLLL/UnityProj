@@ -1,22 +1,15 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class DontDestroy: MonoBehaviour
 {
-    private DontDestroy[] reloadedObjs;
-    public void Start()
+    public void Awake()
     {
-        reloadedObjs = FindObjectsOfType<DontDestroy>(true);
-        for (int i = 0; i < reloadedObjs.Length; i++)
+        if (FindObjectOfType<DontDestroy>() != this)
         {
-            if (reloadedObjs[i] != this && reloadedObjs[i].name == gameObject.name)
-            {
-                if (reloadedObjs[i].CompareTag("Options"))
-                    Destroy(reloadedObjs[i]);
-                else
-                    Destroy(gameObject);
-            }
+            if (FindObjectOfType<DontDestroy>().name == this.name)
+                Destroy(gameObject);
         }
         DontDestroyOnLoad(gameObject);
     }

@@ -38,6 +38,7 @@ public class LevelManager : MonoBehaviour
             buttons[i].image.sprite = lockedSprite;
         }
         buttons[1].interactable = true;
+        buttons[2].interactable = true;
     }
     public void Loadlevel(int lvlIndex)
     {

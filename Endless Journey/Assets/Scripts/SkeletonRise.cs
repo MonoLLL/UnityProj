@@ -18,6 +18,8 @@ public class SkeletonRise : MonoBehaviour
         collision.isTrigger = true;
         collision.size = new Vector2(25, 5);
         collision.offset = new Vector2(0, 1);
+        gameObject.tag = "Untagged";
+        gameObject.layer = 0;
     }
 
     void Update()
@@ -42,5 +44,7 @@ public class SkeletonRise : MonoBehaviour
         body.bodyType = RigidbodyType2D.Dynamic;
         GetComponent<PatrolScript>().enabled = true;
         GetComponent<SkeletonRise>().enabled = false;
+        gameObject.tag = "Enemy";
+        gameObject.layer = 6;
     }
 }

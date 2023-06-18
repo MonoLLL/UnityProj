@@ -39,6 +39,7 @@ public class LevelManager : MonoBehaviour
         }
         buttons[1].interactable = true;
         buttons[2].interactable = true;
+        buttons[3].interactable = true;
     }
     public void Loadlevel(int lvlIndex)
     {

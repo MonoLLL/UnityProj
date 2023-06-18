@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public bool canMove;
     [SerializeField] private LayerMask layer;
     private Animator anim;
-    private SpriteRenderer sprite;
+    public SpriteRenderer sprite;
     private Rigidbody2D body;
     private BoxCollider2D boxCollider;
     private enum MovementState { idle, running, jumping, attack }

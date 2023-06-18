@@ -5,8 +5,16 @@ using UnityEngine.UI;
 
 public class StarCollectible : MonoBehaviour
 {
-    [SerializeField] private Image totalBar;
+    public static StarCollectible Instance { get; private set; }
+    public float Score;
+    public Image totalBar;
     [SerializeField] private AudioClip plusStarSound;
+
+    public void Awake()
+    {
+        Instance = this;
+        Score = 0f;
+    }
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -15,5 +23,14 @@ public class StarCollectible : MonoBehaviour
             SoundManager.instance.PlaySound(plusStarSound, SoundManager.currentVolume);
             gameObject.SetActive(false);
         }
+        SaveScore();
+    }
+    public void SaveScore()
+    {
+        Score = totalBar.fillAmount;
+    }
+    public void LoadScore()
+    {
+        totalBar.fillAmount = Score;
     }
 }

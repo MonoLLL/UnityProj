@@ -6,11 +6,15 @@ public class DontDestroy: MonoBehaviour
 {
     public void Awake()
     {
-        if (FindObjectOfType<DontDestroy>() != this)
+        DontDestroy[] saved = FindObjectsOfType<DontDestroy>(true);
+        foreach (var item in saved)
         {
-            if (FindObjectOfType<DontDestroy>().name == this.name)
-                Destroy(gameObject);
+            if (item != this)
+            {
+                if (item.name == this.name)
+                    Destroy(gameObject);
+            }
+            DontDestroyOnLoad(gameObject);
         }
-        DontDestroyOnLoad(gameObject);
     }
 }

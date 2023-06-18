@@ -1140,7 +1140,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 542592255}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.6844039, y: 3.848861, z: -10}
+  m_LocalPosition: {x: -1.6762154, y: 3.848869, z: -10}
   m_LocalScale: {x: 0.37163767, y: 0.86641693, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1703,7 +1703,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 684890286}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.0500007, y: 3.5100005, z: -10}
+  m_LocalPosition: {x: -2.0500004, y: 3.5100005, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7096,6 +7096,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1051752623}
+  - component: {fileID: 1051752624}
   m_Layer: 0
   m_Name: AttackPoint
   m_TagString: Untagged
@@ -7118,6 +7119,18 @@ Transform:
   m_Father: {fileID: 1165291708}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1051752624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051752622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a3380694f128eb4b9481af3011f04ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1058459994
 GameObject:
   m_ObjectHideFlags: 0
@@ -7570,6 +7583,7 @@ MonoBehaviour:
   layer:
     serializedVersion: 2
     m_Bits: 128
+  sprite: {fileID: 0}
   isJumping: 0
 --- !u!50 &1165291706
 Rigidbody2D:

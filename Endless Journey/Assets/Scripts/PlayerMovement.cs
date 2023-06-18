@@ -79,23 +79,6 @@ public class PlayerMovement : MonoBehaviour
         anim.SetInteger("state", (int)state);
     }
 
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Floor"))
-    //    {
-    //        isJumping = false;
-    //    }
-    //}
-
-    //private void OnCollisionExit2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Floor"))
-    //    {
-    //        isJumping = true;
-    //        SoundManager.instance.PlaySound(jumpSound, SoundManager.currentVolume);
-    //    }
-    //}
-
     private bool IsOnGround()
     {
         RaycastHit2D onGround = Physics2D.BoxCast(boxCollider.bounds.min + new Vector3(boxCollider.bounds.extents.x, 0), new Vector2(boxCollider.bounds.size.x - 0.2f, 0.2f), 0f, Vector2.down, 0.2f, layer);

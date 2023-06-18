@@ -12,6 +12,7 @@ TagManager:
   - Platform
   - Sound
   - MainMenu
+  - CheckPoint
   layers:
   - Default
   - TransparentFX

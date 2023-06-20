@@ -15,17 +15,16 @@ public class SaveManager: MonoBehaviour
 
     private void Awake()
     {
-        //if (manager == null)
-        //{
-        //    DontDestroyOnLoad(gameObject);
-        //    manager = this;
-        //}
-        //else
-        //{
-        //    if (manager != this)
-        //        Destroy(gameObject);
-        //}
-        manager = this;
+        if (manager == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            manager = this;
+        }
+        else
+        {
+            if (manager != this)
+                Destroy(gameObject);
+        }
         currentStars = 0;
         totalStars = 0;
         health = 0;
@@ -108,6 +107,7 @@ public class SaveManager: MonoBehaviour
 [System.Serializable]
 public class Save
 {
+    // Структура данных - создание вектора
     [System.Serializable]
     public struct Vec2
     {
@@ -118,7 +118,7 @@ public class Save
             this.y = y;
         }
     }
-
+    // Структура данных сохраняемой позиции
     [System.Serializable]
     public struct SaveData
     {
@@ -128,10 +128,12 @@ public class Save
             position = pos;
         }
     }
+    // Сохраняемые поля
     public List<SaveData> Creatures = new List<SaveData>();
     public float Score;
     public int lvlUnlock;
     public float Health;
+    // Заполнение списка сохраняемых позиций объектов
     public void SaveCreatures(List<GameObject> creatures)
     {
         foreach (GameObject creature in creatures)

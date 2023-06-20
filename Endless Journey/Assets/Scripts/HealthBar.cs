@@ -15,10 +15,6 @@ public class HealthBar : MonoBehaviour
         Instance = this;
         healthToSave = 1f;
     }
-    void Start()
-    {
-        totalHealthBar.fillAmount = playerHealth.currentHealth / 3;
-    }
     void Update()
     {
         totalHealthBar.fillAmount = playerHealth.currentHealth / 3;

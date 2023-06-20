@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Timers;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
@@ -19,8 +16,8 @@ public class EnemyHealth : MonoBehaviour
         currentHealth = currentHealth - damage;
         if (currentHealth <= 0)
         {
-            SoundManager.instance.PlaySound(deathSound,  SoundManager.currentVolume);
-            anim.SetTrigger("death");    //Здесь должна быть анимация смерти
+            SoundManager.instance.PlaySound(deathSound);
+            anim.SetTrigger("death");   
             GetComponent<BoxCollider2D>().enabled = false;
             if (GetComponent<PatrolScript>() != null)
             {

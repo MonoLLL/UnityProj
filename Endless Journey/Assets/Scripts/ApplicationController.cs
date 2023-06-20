@@ -3,18 +3,6 @@ using UnityEngine.SceneManagement;
 
 public class ApplicationController: MonoBehaviour
 {
-    //private void Awake()
-    //{
-    //    if (gameObject == null)
-    //    {
-    //        DontDestroyOnLoad(gameObject);
-    //    }
-    //    else
-    //    {
-    //        if (gameObject != this)
-    //            Destroy(gameObject);
-    //    }
-    //}
     private void OnSceneUnloaded(Scene current)
     {
         if (current.buildIndex < 2)
@@ -41,11 +29,17 @@ public class ApplicationController: MonoBehaviour
             SaveManager.manager.LoadGameProgress();
         }
     }
+    [RuntimeInitializeOnLoadMethod]
+    public void OnApplicationOpen(bool focus)
+    {
+        AudioController.Controller.LoadSettings();
+    }
     public void OnApplicationQuit()
     {
         if (SceneManager.GetActiveScene().buildIndex == LevelManager.lvlUnlock + 2)
         {
             SaveManager.manager.SaveInProcess();
         }
+        PlayerPrefs.Save();
     }
 }

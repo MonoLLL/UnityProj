@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SaveManager">
+    <Position X="5.25" Y="2.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAIACgAAAAAIAAAAAAkAACAAEAAAAAAAAAAEEg=</HashCode>
+      <FileName>Assets\Scripts\SaveManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Save">
+    <Position X="3.5" Y="2.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Struct Name="Save.Vec2">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\SaveManager.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+      <Struct Name="Save.SaveData">
+        <TypeIdentifier>
+          <NewMemberFileName>Assets\Scripts\SaveManager.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAgAAAAAAAAgAAAAAgAAABAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\SaveManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ApplicationController">
+    <Position X="0.75" Y="2.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAJAAAAAAAAACAAAAAAAAAAAAAAAIAAAAEAAAGAA=</HashCode>
+      <FileName>Assets\Scripts\ApplicationController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AudioController">
+    <Position X="13" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>RAQAAAAAASAAAIAgAAAAABAAAAAAEAAAEAAGAAgBAFA=</HashCode>
+      <FileName>Assets\Scripts\AudioController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Buttons">
+    <Position X="8.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Buttons.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Respawn">
+    <Position X="17" Y="7" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAEAAAAAAAAAAAAAAAQEAgAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\Respawn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HealthBar">
+    <Position X="19" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAQCAAAAAAAAAAAAAAQAAAAAAAAACAAAQAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\HealthBar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StarCollectible">
+    <Position X="9" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAIAAAAAAgAAAAAAAAAAAAIAAACQAAgAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\StarCollectible.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LevelManager">
+    <Position X="18.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAABAACAAAAAAIAAAAAAQAAAIAoAAAAAAAAAAAkg=</HashCode>
+      <FileName>Assets\Scripts\LevelManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DontDestroy">
+    <Position X="11.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\DontDestroy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoundManager">
+    <Position X="14.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAIAAAAAAAgAAABAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\SoundManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainMenu">
+    <Position X="16.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAMAAhBAAAgAAAgAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\MainMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Health">
+    <Position X="20.75" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAABAYEAgAAgAEA=</HashCode>
+      <FileName>Assets\Scripts\Health.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EnemyDamage">
+    <Position X="13.25" Y="7" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAQAAAAAAIAAAAAAAABAAAgAAAAAAg=</HashCode>
+      <FileName>Assets\Scripts\EnemyDamage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EnemyHealth">
+    <Position X="15.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAgAYACgAAAAEA=</HashCode>
+      <FileName>Assets\Scripts\EnemyHealth.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,20 +1,22 @@
-using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DontDestroy: MonoBehaviour
 {
+    private DontDestroy[] saved;
     public void Awake()
     {
-        DontDestroy[] saved = FindObjectsOfType<DontDestroy>(true);
+        saved = FindObjectsOfType<DontDestroy>(true);
         foreach (var item in saved)
         {
+            // Найден объект типа DontDestroy, не являющийся объектом, к которому прикреплен этот скрипт
             if (item != this)
             {
+                // Имя объектов одинаковое - дубликат удаляется
                 if (item.name == this.name)
                     Destroy(gameObject);
             }
-            DontDestroyOnLoad(gameObject);
+            // Метод библиотеки UnityEngine, не уничтожающий объект при переходе на другой экран (сцену)
         }
+        DontDestroyOnLoad(gameObject);
     }
 }

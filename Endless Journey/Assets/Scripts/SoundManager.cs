@@ -1,14 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class SoundManager : MonoBehaviour
 {
+    // Свойство для доступа к членам класса из других классов
     public static SoundManager instance { get; private set; }
     public static float currentVolume = 1f;
     private AudioSource source;
+
     public void Awake()
     {
         if (instance == null)
@@ -23,14 +21,9 @@ public class SoundManager : MonoBehaviour
         }
         source = GetComponent<AudioSource>();
     }
-    public void Init()
+    public void PlaySound(AudioClip _sound)
     {
-        instance = this;
-        source = GetComponent<AudioSource>();
-    }
-    public void PlaySound(AudioClip _sound, float volume)
-    {
-        Init();
-        source.PlayOneShot(_sound, volume);
+        // Метод проигрывает звук один раз
+        source.PlayOneShot(_sound, currentVolume);
     }
 }

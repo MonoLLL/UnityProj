@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
@@ -14,22 +11,26 @@ public class LevelManager : MonoBehaviour
     public Text currentLvlNum;
     public Image stars;
     public Image emptyStars;
-    private void Awake()
+    void Awake()
     {
         lvlUnlock = 1;
     }
     void Start()
     {
+        // ƒл€ всех доступных уровней
         for (int i = 0; i < lvlUnlock; i++)
         {
+            // ”становить состо€ние кнопки
             buttons[i].interactable = true;
             buttons[i].image.sprite = unlockedSprites[i];
+            // јктивировать метку под текущим уровнем, помен€ть текст текущего уровн€
             if (i == lvlUnlock - 1)
             {
                 currentLvl.gameObject.SetActive(true);
                 currentLvl.transform.position = new Vector2(buttons[i].transform.position.x, buttons[i].transform.position.y-60);
                 currentLvlNum.text = (i+1).ToString();
             }
+            // Ўкала рейтинга устанавливаетс€ под всеми уровн€ми, кроме еще не пройденного последнего открытого
             else
             {
                 float x, y;
@@ -47,30 +48,26 @@ public class LevelManager : MonoBehaviour
                         x = buttons[i].transform.position.x;
                     stars.transform.position = new Vector2(x, y);
                 }
+                // ≈сли не было собрано ни одной звезды, устанавливаетс€ пуста€ шкала
                 else
                 {
                     emptyStars.gameObject.SetActive(true);
                     x = buttons[i].transform.position.x;
-                    stars.transform.position = new Vector2(x, y);
+                    emptyStars.transform.position = new Vector2(x, y);
                 }
             }
         }
+        // ƒл€ всех недоступных уровней устанавливаетс€ неактивное состо€ние
         for (int i = lvlUnlock; i < buttons.Length; i++)
         {
             buttons[i].interactable = false;
             buttons[i].image.sprite = lockedSprite;
         }
-        buttons[1].interactable = true;
-        buttons[2].interactable = true;
-        buttons[3].interactable = true;
     }
+    // «апустить текущий уровень по нажатию Enter
     void Update()
     {
         if (Input.GetKeyDown("return"))
             buttons[lvlUnlock - 1].onClick.Invoke();
-    }
-    public void Loadlevel(int lvlIndex)
-    {
-        SceneManager.LoadScene(lvlIndex+1);
     }
 }

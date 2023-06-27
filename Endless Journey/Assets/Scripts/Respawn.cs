@@ -16,7 +16,6 @@ public class Respawn : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("CheckPoint"))
         {
-            SaveResults();
             if(SceneManager.GetActiveScene().buildIndex != 6)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -28,7 +27,8 @@ public class Respawn : MonoBehaviour
     }
     public void SaveResults()
     {
-        LevelManager.lvlUnlock += 1;
+        if (LevelManager.lvlUnlock != 4)
+            LevelManager.lvlUnlock += 1;
         finalProgress = StarCollectible.Instance.Score;
         SaveManager.manager.SaveProgress();
     }

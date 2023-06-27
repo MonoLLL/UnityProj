@@ -31,6 +31,7 @@ public class SaveManager: MonoBehaviour
         health = 0;
         unlockedLvls = 1;
         filePath = Application.persistentDataPath + "/savedgame.save";
+        File.Delete(filePath);
     }
     //Сохранение финальных результатов уровня. Вызывается по его завершении
     public void SaveProgress()

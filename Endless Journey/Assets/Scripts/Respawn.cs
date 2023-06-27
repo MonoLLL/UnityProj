@@ -17,7 +17,12 @@ public class Respawn : MonoBehaviour
         if (collision.gameObject.CompareTag("CheckPoint"))
         {
             SaveResults();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            if(SceneManager.GetActiveScene().buildIndex != 6)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+            else
+                SceneManager.LoadScene(2);
             SoundManager.instance.PlaySound(winSound);
         }
     }

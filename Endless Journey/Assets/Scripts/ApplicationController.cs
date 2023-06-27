@@ -8,21 +8,21 @@ public class ApplicationController: MonoBehaviour
     //    if (current.buildIndex < 2)
     //        SaveManager.manager.SaveInProcess();
     //}
-    private void OnSceneLoaded(Scene current, LoadSceneMode mode)
-    {
-        if (current.buildIndex == LevelManager.lvlUnlock + 2)
-            SaveManager.manager.LoadGameProcess();
-    }
-    private void OnEnable()
-    {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-        //SceneManager.sceneUnloaded += OnSceneUnloaded;
-    }
-    private void OnDisable()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-        //SceneManager.sceneUnloaded -= OnSceneUnloaded;
-    }
+    //private void OnSceneLoaded(Scene current, LoadSceneMode mode)
+    //{
+    //    if (current.buildIndex == LevelManager.lvlUnlock + 2)
+    //        SaveManager.manager.LoadGameProcess();
+    //}
+    //private void OnEnable()
+    //{
+    //    SceneManager.sceneLoaded += OnSceneLoaded;
+    //    //SceneManager.sceneUnloaded += OnSceneUnloaded;
+    //}
+    //private void OnDisable()
+    //{
+    //    SceneManager.sceneLoaded -= OnSceneLoaded;
+    //    //SceneManager.sceneUnloaded -= OnSceneUnloaded;
+    //}
     public static void OnLoadLastLvl()
     {
         if (SceneManager.GetActiveScene().buildIndex == 2)
@@ -37,10 +37,10 @@ public class ApplicationController: MonoBehaviour
     }
     public void OnApplicationQuit()
     {
-        if (SceneManager.GetActiveScene().buildIndex == LevelManager.lvlUnlock + 2)
-        {
-            SaveManager.manager.SaveInProcess();
-        }
+        //if (SceneManager.GetActiveScene().buildIndex == LevelManager.lvlUnlock + 2)
+        //{
+        //    SaveManager.manager.SaveInProcess();
+        //}
         PlayerPrefs.Save();
     }
 }

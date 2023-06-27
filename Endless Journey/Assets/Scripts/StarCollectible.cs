@@ -20,7 +20,7 @@ public class StarCollectible : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             totalBar.fillAmount += 0.33f;
-            SoundManager.instance.PlaySound(plusStarSound, SoundManager.currentVolume);
+            SoundManager.instance.PlaySound(plusStarSound);
             gameObject.SetActive(false);
         }
         SaveScore();

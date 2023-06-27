@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Build;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -40,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space) && !isJumping)
             {
                 body.AddForce(new Vector2(body.velocity.x, jump));
-                SoundManager.instance.PlaySound(jumpSound, SoundManager.currentVolume);
+                SoundManager.instance.PlaySound(jumpSound);
             }
         }
 

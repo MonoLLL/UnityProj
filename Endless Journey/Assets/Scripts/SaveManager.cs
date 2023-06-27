@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.Collections.Generic;
 public class SaveManager: MonoBehaviour
 {
     public static SaveManager manager { get; private set; }
-    public List<GameObject> Creatures = new List<GameObject>();
+    public static List<GameObject> Creatures = new List<GameObject>();
     private float currentStars;
     private float totalStars;
     private float health;
@@ -40,7 +41,7 @@ public class SaveManager: MonoBehaviour
         Save save = new Save();
         totalStars = Respawn.Instance.finalProgress;
         unlockedLvls = LevelManager.lvlUnlock;
-        save.Score = totalStars;
+        save.Score[SceneManager.GetActiveScene().buildIndex-3] = totalStars;
         save.lvlUnlock = unlockedLvls;
 
         binFormatter.Serialize(file, save);
@@ -55,7 +56,7 @@ public class SaveManager: MonoBehaviour
         Save save = new Save();
         currentStars = StarCollectible.Instance.Score;
         health = HealthBar.Instance.healthToSave;
-        save.Score = currentStars;
+        //save.Score = currentStars;
         save.Health = health;
         save.SaveCreatures(Creatures);
 
@@ -84,7 +85,7 @@ public class SaveManager: MonoBehaviour
             }
             HealthBar.Instance.healthToSave = save.Health;
             HealthBar.Instance.LoadHealth();
-            StarCollectible.Instance.Score = save.Score;
+            //StarCollectible.Instance.Score = save.Score;
             StarCollectible.Instance.LoadScore();
         }
     }
@@ -96,12 +97,19 @@ public class SaveManager: MonoBehaviour
         BinaryFormatter binFormatter = new BinaryFormatter();
         FileStream file = new FileStream(filePath, FileMode.Open);
 
-        Save save = (Save)binFormatter.Deserialize(file);
-        file.Close();
+        if (file.Length != 0)
+        {
+            Save save = (Save)binFormatter.Deserialize(file);
+            file.Close();
 
-        LevelManager.lvlUnlock = save.lvlUnlock;
-        StarCollectible.Instance.Score = save.Score;
-        StarCollectible.Instance.LoadScore();
+            LevelManager.lvlUnlock = save.lvlUnlock;
+            LevelManager.res = save.Score;
+        }
+        //if (StarCollectible.Instance != null)
+        //{
+        //    StarCollectible.Instance.Score = save.Score;
+        //    StarCollectible.Instance.LoadScore();
+        //}
     }
 }
 [System.Serializable]
@@ -130,7 +138,7 @@ public class Save
     }
     // Сохраняемые поля
     public List<SaveData> Creatures = new List<SaveData>();
-    public float Score;
+    public float[] Score = new float[4];
     public int lvlUnlock;
     public float Health;
     // Заполнение списка сохраняемых позиций объектов

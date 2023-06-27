@@ -7,6 +7,14 @@ public class Pause : MonoBehaviour
 {
     public Image pauseMenu;
 
+    public void Update()
+    {
+        if (Input.GetKeyDown("return"))
+        {
+            pauseMenu.gameObject.SetActive(false);
+            Time.timeScale = 1;
+        }
+    }
     public void PauseGame()
     {
         if (pauseMenu.gameObject.activeSelf)

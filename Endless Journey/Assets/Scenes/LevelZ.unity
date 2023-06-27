@@ -501,7 +501,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Score: 0
-  totalBar: {fileID: 0}
+  totalBar: {fileID: 180317042}
   plusStarSound: {fileID: 8300000, guid: 50527f3fcdcb84a49a284983d3f05a49, type: 3}
 --- !u!61 &180688102
 BoxCollider2D:
@@ -16772,7 +16772,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Score: 0
-  totalBar: {fileID: 0}
+  totalBar: {fileID: 180317042}
   plusStarSound: {fileID: 8300000, guid: 50527f3fcdcb84a49a284983d3f05a49, type: 3}
 --- !u!61 &617831963
 BoxCollider2D:
@@ -23454,7 +23454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Score: 0
-  totalBar: {fileID: 0}
+  totalBar: {fileID: 180317042}
   plusStarSound: {fileID: 8300000, guid: 50527f3fcdcb84a49a284983d3f05a49, type: 3}
 --- !u!61 &1017731110
 BoxCollider2D:
@@ -31041,7 +31041,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startHealth: 3
   hurtSound: {fileID: 8300000, guid: cd9e6f2e39695a44888def29a9153590, type: 3}
-  deathWindow: {fileID: 0}
+  deathWindow: {fileID: 1683927212}
 --- !u!95 &1344640848
 Animator:
   serializedVersion: 4

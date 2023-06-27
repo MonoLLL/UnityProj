@@ -101,8 +101,10 @@ public class SaveManager: MonoBehaviour
         {
             Save save = (Save)binFormatter.Deserialize(file);
             file.Close();
-
-            LevelManager.lvlUnlock = save.lvlUnlock;
+            if (save.lvlUnlock > 4)
+                LevelManager.lvlUnlock = 4;
+            else
+                LevelManager.lvlUnlock = save.lvlUnlock;
             LevelManager.res = save.Score;
         }
         //if (StarCollectible.Instance != null)

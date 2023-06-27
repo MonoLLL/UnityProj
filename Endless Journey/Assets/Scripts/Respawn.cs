@@ -16,6 +16,7 @@ public class Respawn : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("CheckPoint"))
         {
+            SaveResults();
             if(SceneManager.GetActiveScene().buildIndex != 6)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

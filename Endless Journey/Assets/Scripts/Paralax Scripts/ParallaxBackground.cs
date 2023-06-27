@@ -12,7 +12,6 @@ public class ParallaxBackground : MonoBehaviour
         //Получение объекта камеры
         if (parallaxCamera == null)
             parallaxCamera = Camera.main.GetComponent<ParallaxCamera>();
-        
         //Подписка функции на делегат
         if (parallaxCamera != null)
             parallaxCamera.onCameraTranslate += Move;

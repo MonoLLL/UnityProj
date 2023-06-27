@@ -34,5 +34,6 @@ public class EnemyHealth : MonoBehaviour
     public void Death()
     {
         Destroy(gameObject);
+        SaveManager.Creatures.Remove(gameObject);
     }
 }

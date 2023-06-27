@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
@@ -28,18 +29,25 @@ public class MainMenu : MonoBehaviour
     {
         DontDestroy settings = FindObjectOfType<DontDestroy>();
         settings.gameObject.transform.GetChild(1).gameObject.SetActive(true);
+
+        Button[] btns = FindObjectsOfType<Button>();
+        foreach (Button button in btns)
+        {
+            if (button.name != "CloseTab")
+                button.interactable = false;
+        }
     }
     public void SaveSettings()
     {
         AudioController.Controller.SaveSettings();
     }
-    public void CloseTabOnMenu()
+    public void CloseTab()
     {
-        FindDeactivatedObjects(2, 2);
-    }
-    public void FindDeactivatedObjects(int rootToActive, int childToActive)
-    {
-        GameObject[] objs = SceneManager.GetActiveScene().GetRootGameObjects();
-        objs[rootToActive].transform.GetChild(childToActive).gameObject.SetActive(true);
+        Button[] btns = FindObjectsOfType<Button>();
+        foreach (Button button in btns)
+        {
+            if (button.name != "CloseTab")
+                button.interactable = true;
+        }
     }
 }

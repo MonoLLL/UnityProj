@@ -3,25 +3,25 @@ using UnityEngine.SceneManagement;
 
 public class ApplicationController: MonoBehaviour
 {
-    private void OnSceneUnloaded(Scene current)
-    {
-        if (current.buildIndex < 2)
-            SaveManager.manager.SaveInProcess();
-    }    
-    private void OnSceneLoaded(Scene current, LoadSceneMode mode)
-    {
-        SaveManager.manager.LoadGameProcess();
-    }
-    private void OnEnable()
-    {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-        SceneManager.sceneUnloaded += OnSceneUnloaded;
-    }
-    private void OnDisable()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-        SceneManager.sceneUnloaded -= OnSceneUnloaded;
-    }
+    //private void OnSceneUnloaded(Scene current)
+    //{
+    //    if (current.buildIndex < 2)
+    //        SaveManager.manager.SaveInProcess();
+    //}    
+    //private void OnSceneLoaded(Scene current, LoadSceneMode mode)
+    //{
+    //    SaveManager.manager.LoadGameProcess();
+    //}
+    //private void OnEnable()
+    //{
+    //    SceneManager.sceneLoaded += OnSceneLoaded;
+    //    SceneManager.sceneUnloaded += OnSceneUnloaded;
+    //}
+    //private void OnDisable()
+    //{
+    //    SceneManager.sceneLoaded -= OnSceneLoaded;
+    //    SceneManager.sceneUnloaded -= OnSceneUnloaded;
+    //}
     public static void OnLoadLastLvl()
     {
         if (SceneManager.GetActiveScene().buildIndex == 2)
@@ -30,9 +30,9 @@ public class ApplicationController: MonoBehaviour
         }
     }
     [RuntimeInitializeOnLoadMethod]
-    public void OnApplicationOpen(bool focus)
+    public void OnApplicationOpen()
     {
-        AudioController.Controller.LoadSettings();
+        //AudioController.Controller.LoadSettings();
     }
     public void OnApplicationQuit()
     {

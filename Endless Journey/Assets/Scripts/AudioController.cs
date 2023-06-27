@@ -28,6 +28,8 @@ public class AudioController : MonoBehaviour
         sources = FindObjectsOfType<AudioSource>();
         audioSource2 = sources[1];
         audioSource = sources[0];
+
+        LoadSettings();
     }
     public void Update()
     {
@@ -61,7 +63,10 @@ public class AudioController : MonoBehaviour
     // Восстановление настроек
     public void LoadSettings()
     {
-        PlayerPrefs.GetFloat("music", slider.value);
-        PlayerPrefs.GetFloat("sound", slider2.value);
+        slider.value = PlayerPrefs.GetFloat("music");
+        slider2.value = PlayerPrefs.GetFloat("sound");
+        audioSource.volume = slider.value;
+        audioSource2.volume = slider2.value;
+        SoundManager.currentVolume = slider2.value;
     }
 }

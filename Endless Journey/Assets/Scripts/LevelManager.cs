@@ -4,19 +4,21 @@ using UnityEngine.UI;
 public class LevelManager : MonoBehaviour
 {
     public static int lvlUnlock { get; set; }
+    public static float[] res { get; set; }
     public Button[] buttons;
     public Sprite lockedSprite;
     public Sprite[] unlockedSprites;
     public Image currentLvl;
     public Text currentLvlNum;
-    public Image stars;
-    public Image emptyStars;
+    public Image[] stars;
+    public Image[] emptyStars;
     void Awake()
     {
         lvlUnlock = 1;
     }
     void Start()
     {
+        SaveManager.manager.LoadGameProgress();
         // ƒл€ всех доступных уровней
         for (int i = 0; i < lvlUnlock; i++)
         {
@@ -35,25 +37,24 @@ public class LevelManager : MonoBehaviour
             {
                 float x, y;
                 y = buttons[i].transform.position.y - 60;
-                float res = StarCollectible.Instance.Score;
-                if (res > 0)
+                if (res[i] > 0)
                 {
-                    stars.gameObject.SetActive(true);
-                    stars.fillAmount = StarCollectible.Instance.Score;
-                    if (res == 0.33)
+                    stars[i].gameObject.SetActive(true);
+                    stars[i].fillAmount = res[i];
+                    if (res[i] == 0.33)
                         x = buttons[i].transform.position.x + 20;
-                    else if (res == 0.66)
+                    else if (res[i] == 0.66)
                         x = buttons[i].transform.position.x + 10;
                     else
                         x = buttons[i].transform.position.x;
-                    stars.transform.position = new Vector2(x, y);
+                    stars[i].transform.position = new Vector2(x, y);
                 }
                 // ≈сли не было собрано ни одной звезды, устанавливаетс€ пуста€ шкала
                 else
                 {
-                    emptyStars.gameObject.SetActive(true);
+                    emptyStars[i].gameObject.SetActive(true);
                     x = buttons[i].transform.position.x;
-                    emptyStars.transform.position = new Vector2(x, y);
+                    emptyStars[i].transform.position = new Vector2(x, y);
                 }
             }
         }

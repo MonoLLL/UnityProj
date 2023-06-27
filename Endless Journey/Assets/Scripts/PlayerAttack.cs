@@ -24,7 +24,7 @@ public class PlayerAttack : MonoBehaviour
     private void Attack()
     {
         ToggleMovement();
-        SoundManager.instance.PlaySound(attackSound, SoundManager.currentVolume);
+        SoundManager.instance.PlaySound(attackSound);
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
         foreach (Collider2D enemy in hitEnemies)
         {

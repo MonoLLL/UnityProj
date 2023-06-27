@@ -4,7 +4,7 @@ public class SoundManager : MonoBehaviour
 {
     // Свойство для доступа к членам класса из других классов
     public static SoundManager instance { get; private set; }
-    public static float currentVolume = 1f;
+    public static float currentVolume;
     private AudioSource source;
 
     public void Awake()
